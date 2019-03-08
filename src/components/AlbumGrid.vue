@@ -1,6 +1,6 @@
 <template>
   <div class="album-details">
-    <img :alt="title + ' by ' + band" :src="getImgUrl(cover)" />
+    <a href="#/album-details"><img :alt="title + ' by ' + band" :src="getImgUrl(cover)" /></a>
     <span class="caption">
       <h1>{{ title }}</h1>
       <h3>{{ band }}</h3>
@@ -12,12 +12,13 @@
 
 <script>
 export default {
-  name: "Album",
+  name: "AlbumGrid",
   props: {
     cover: String,
     title: String,
     band: String,
-    spotifyLink: String
+    spotifyLink: String,
+    itunesLink: String
   },
   methods: {
     getImgUrl(pic) {
